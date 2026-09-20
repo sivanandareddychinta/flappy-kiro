@@ -1,0 +1,41 @@
+{
+  "stage": "domain-design",
+  "upstream_ids": [
+    "FR1.1", "FR1.2", "FR1.3", "FR1.4", "FR1.5", "FR1.6",
+    "FR2.1", "FR2.2", "FR2.3", "FR2.4", "FR2.5", "FR2.6",
+    "FR3.1", "FR3.2", "FR3.3", "FR3.4",
+    "FR4.1", "FR4.2", "FR4.3", "FR4.4", "FR4.5",
+    "FR5.1", "FR5.2", "FR5.3", "FR5.4",
+    "FR6.1", "FR6.2", "FR6.3"
+  ],
+  "coverage": [
+    { "id": "FR1.1", "status": "OK", "target": "Player", "detail": "Player owns Ghosty position, spawns at starting x, rightward velocity is constant" },
+    { "id": "FR1.2", "status": "OK", "target": "Physics", "detail": "Physics applies constant downward gravity acceleration" },
+    { "id": "FR1.3", "status": "OK", "target": "Physics", "detail": "Physics applies upward impulse to Player on spacebar (Input → Player → Physics)" },
+    { "id": "FR1.4", "status": "OK", "target": "Physics", "detail": "Physics enforces world boundaries (ceiling and ground constraints)" },
+    { "id": "FR1.5", "status": "OK", "target": "Physics", "detail": "Physics detects ceiling collision, reports to GameLoop; GameLoop transitions to ended state" },
+    { "id": "FR1.6", "status": "OK", "target": "Physics", "detail": "Physics detects ground collision, reports to GameLoop; GameLoop transitions to ended state" },
+    { "id": "FR2.1", "status": "OK", "target": "Obstacles", "detail": "Obstacles spawns walls at regular horizontal intervals during gameplay" },
+    { "id": "FR2.2", "status": "OK", "target": "Obstacles", "detail": "Obstacles creates two vertical wall segments with gap between them" },
+    { "id": "FR2.3", "status": "OK", "target": "Obstacles", "detail": "Obstacles randomizes gap position vertically within safe bounds (not at edges)" },
+    { "id": "FR2.4", "status": "OK", "target": "Obstacles", "detail": "Obstacles maintains consistent gap size throughout playthrough" },
+    { "id": "FR2.5", "status": "OK", "target": "Physics", "detail": "Physics detects collision between Player and wall segments; GameLoop ends game" },
+    { "id": "FR2.6", "status": "OK", "target": "Physics", "detail": "Physics detects wall collision, reports to GameLoop; GameLoop transitions to ended state" },
+    { "id": "FR3.1", "status": "OK", "target": "Scoring", "detail": "Scoring increments on pass-through event detected by GameLoop (Player passes gap)" },
+    { "id": "FR3.2", "status": "OK", "target": "Rendering", "detail": "Rendering queries Scoring and draws current score on HUD during gameplay" },
+    { "id": "FR3.3", "status": "OK", "target": "Rendering", "detail": "Rendering displays final score on end screen" },
+    { "id": "FR3.4", "status": "OK", "target": "Scoring", "detail": "Scoring tracks high score across sessions via Persistence" },
+    { "id": "FR4.1", "status": "OK", "target": "GameLoop", "detail": "GameLoop starts in ready state (not playing)" },
+    { "id": "FR4.2", "status": "OK", "target": "GameLoop", "detail": "GameLoop transitions ready→playing on Input flap event" },
+    { "id": "FR4.3", "status": "OK", "target": "GameLoop", "detail": "GameLoop runs update loop until collision detected by Physics" },
+    { "id": "FR4.4", "status": "OK", "target": "Rendering", "detail": "Rendering draws end screen with final score, high score, and menu options" },
+    { "id": "FR4.5", "status": "OK", "target": "Rendering", "detail": "Rendering displays menu options (Play Again, Settings, Quit) on end screen" },
+    { "id": "FR5.1", "status": "OK", "target": "Audio", "detail": "Audio plays sound effects on events: Input.onFlap(), Scoring.onPointEarned(), Physics collision" },
+    { "id": "FR5.2", "status": "OK", "target": "Audio", "detail": "Audio plays background music during GameLoop playing state" },
+    { "id": "FR5.3", "status": "OK", "target": "Audio", "detail": "Audio respects mute state toggled from settings menu" },
+    { "id": "FR5.4", "status": "OK", "target": "GameLoop", "detail": "GameLoop runs identically regardless of audio state; Audio is optional" },
+    { "id": "FR6.1", "status": "OK", "target": "Persistence", "detail": "Persistence saves high score to browser localStorage" },
+    { "id": "FR6.2", "status": "OK", "target": "Persistence", "detail": "Persistence persists high score across page refreshes and browser sessions" },
+    { "id": "FR6.3", "status": "OK", "target": "Scoring", "detail": "Scoring loads high score from Persistence on initialization" }
+  ]
+}

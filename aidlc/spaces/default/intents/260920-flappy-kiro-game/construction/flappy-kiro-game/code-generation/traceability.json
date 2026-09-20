@@ -1,0 +1,350 @@
+{
+  "stage": "code-generation",
+  "unit": "flappy-kiro-game",
+  "version": 1,
+  "upstream_ids": [
+    "FR1.1", "FR1.2", "FR1.3", "FR1.4", "FR1.5", "FR1.6",
+    "FR2.1", "FR2.2", "FR2.3", "FR2.4", "FR2.5", "FR2.6",
+    "FR3.1", "FR3.2", "FR3.3", "FR3.4",
+    "FR4.1", "FR4.2", "FR4.3", "FR4.4", "FR4.5",
+    "FR5.1", "FR5.2", "FR5.3", "FR5.4",
+    "FR6.1", "FR6.2", "FR6.3",
+    "NFR1.1", "NFR1.2", "NFR1.3",
+    "NFR2.1", "NFR2.2", "NFR2.3",
+    "NFR3.1", "NFR3.2", "NFR3.3",
+    "NFR4.1", "NFR4.2", "NFR4.3",
+    "NFR5.1", "NFR5.2", "NFR5.3",
+    "NFR6.1", "NFR6.2", "NFR6.3", "NFR6.4"
+  ],
+  "coverage": [
+    {
+      "id": "FR1.1",
+      "description": "Ghosty spawns at consistent position and moves right at constant velocity",
+      "status": "OK",
+      "target": "src/Player.ts",
+      "test_file": "src/Player.test.ts"
+    },
+    {
+      "id": "FR1.2",
+      "description": "Gravity acts on Ghosty at constant rate",
+      "status": "OK",
+      "target": "src/Physics.ts",
+      "test_file": "src/Physics.test.ts"
+    },
+    {
+      "id": "FR1.3",
+      "description": "Spacebar applies upward impulse to Ghosty",
+      "status": "OK",
+      "target": "src/Input.ts",
+      "test_file": "src/Input.test.ts"
+    },
+    {
+      "id": "FR1.4",
+      "description": "Ghosty constrained by world boundaries (ceiling, ground)",
+      "status": "OK",
+      "target": "src/Physics.ts",
+      "test_file": "src/Physics.test.ts"
+    },
+    {
+      "id": "FR1.5",
+      "description": "Collision with ceiling ends game",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "FR1.6",
+      "description": "Collision with ground ends game",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "FR2.1",
+      "description": "Walls appear at regular horizontal intervals",
+      "status": "OK",
+      "target": "src/Obstacles.ts",
+      "test_file": "src/Obstacles.test.ts"
+    },
+    {
+      "id": "FR2.2",
+      "description": "Each wall has two vertical segments with gap between",
+      "status": "OK",
+      "target": "src/Obstacles.ts",
+      "test_file": "src/Obstacles.test.ts"
+    },
+    {
+      "id": "FR2.3",
+      "description": "Gap position randomized vertically within valid bounds",
+      "status": "OK",
+      "target": "src/Obstacles.ts",
+      "test_file": "src/Obstacles.test.ts"
+    },
+    {
+      "id": "FR2.4",
+      "description": "Gap size consistent across all walls",
+      "status": "OK",
+      "target": "src/Obstacles.ts",
+      "test_file": "src/Obstacles.test.ts"
+    },
+    {
+      "id": "FR2.5",
+      "description": "Ghosty must pass through gap without collision",
+      "status": "OK",
+      "target": "src/Physics.ts",
+      "test_file": "src/Physics.test.ts"
+    },
+    {
+      "id": "FR2.6",
+      "description": "Collision with wall segment ends game",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "FR3.1",
+      "description": "One point awarded when passing through wall gap",
+      "status": "OK",
+      "target": "src/Scoring.ts",
+      "test_file": "src/Scoring.test.ts"
+    },
+    {
+      "id": "FR3.2",
+      "description": "Points displayed during gameplay",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "FR3.3",
+      "description": "Final score displayed when game ends",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "FR3.4",
+      "description": "High score tracked and displayed on end screen",
+      "status": "OK",
+      "target": "src/Persistence.ts",
+      "test_file": "src/Persistence.test.ts"
+    },
+    {
+      "id": "FR4.1",
+      "description": "Game starts in ready state",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "FR4.2",
+      "description": "Player can begin game via spacebar/menu button",
+      "status": "OK",
+      "target": "src/Input.ts",
+      "test_file": "src/Input.test.ts"
+    },
+    {
+      "id": "FR4.3",
+      "description": "Game runs continuously until collision",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "FR4.4",
+      "description": "End screen displays final score and high score with menu",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "FR4.5",
+      "description": "Menu options include Play Again, Settings, Quit/Back",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "FR5.1",
+      "description": "Sound effects on spacebar, passage, and collision",
+      "status": "OK",
+      "target": "src/Audio.ts",
+      "test_file": "src/Audio.test.ts"
+    },
+    {
+      "id": "FR5.2",
+      "description": "Background music plays during gameplay",
+      "status": "OK",
+      "target": "src/Audio.ts",
+      "test_file": "src/Audio.test.ts"
+    },
+    {
+      "id": "FR5.3",
+      "description": "Player can toggle sound on/off from settings menu",
+      "status": "OK",
+      "target": "src/Audio.ts",
+      "test_file": "src/Audio.test.ts"
+    },
+    {
+      "id": "FR5.4",
+      "description": "Game state not affected by audio settings",
+      "status": "OK",
+      "target": "src/Audio.ts",
+      "test_file": "src/Audio.test.ts"
+    },
+    {
+      "id": "FR6.1",
+      "description": "High score saved to browser localStorage",
+      "status": "OK",
+      "target": "src/Persistence.ts",
+      "test_file": "src/Persistence.test.ts"
+    },
+    {
+      "id": "FR6.2",
+      "description": "High score persists across refreshes and sessions",
+      "status": "OK",
+      "target": "src/Persistence.ts",
+      "test_file": "src/Persistence.test.ts"
+    },
+    {
+      "id": "FR6.3",
+      "description": "High score loaded on game initialization",
+      "status": "OK",
+      "target": "src/Persistence.ts",
+      "test_file": "src/Persistence.test.ts"
+    },
+    {
+      "id": "NFR1.1",
+      "description": "Game runs at minimum 30 fps on standard desktop browsers",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "NFR1.2",
+      "description": "Frame rate should target 60 fps where achievable",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "NFR1.3",
+      "description": "Input latency imperceptible (<50ms)",
+      "status": "OK",
+      "target": "src/Input.ts",
+      "test_file": "src/Input.test.ts"
+    },
+    {
+      "id": "NFR2.1",
+      "description": "Game runs in all modern desktop browsers (Chrome, Firefox, Safari, Edge)",
+      "status": "OK",
+      "target": "src/index.ts",
+      "test_file": "tests/integration.test.ts"
+    },
+    {
+      "id": "NFR2.2",
+      "description": "No external backend required (all logic client-side)",
+      "status": "OK",
+      "target": "src/",
+      "test_file": "tests/integration.test.ts"
+    },
+    {
+      "id": "NFR2.3",
+      "description": "Game works without network connectivity",
+      "status": "OK",
+      "target": "src/",
+      "test_file": "tests/integration.test.ts"
+    },
+    {
+      "id": "NFR3.1",
+      "description": "Collision detection accurate within ±0.5 sprite width",
+      "status": "OK",
+      "target": "src/Physics.ts",
+      "test_file": "src/Physics.test.ts"
+    },
+    {
+      "id": "NFR3.2",
+      "description": "No false negatives in collision detection",
+      "status": "OK",
+      "target": "src/Physics.ts",
+      "test_file": "src/Physics.test.ts"
+    },
+    {
+      "id": "NFR3.3",
+      "description": "Collisions reported immediately",
+      "status": "OK",
+      "target": "src/Physics.ts",
+      "test_file": "src/Physics.test.ts"
+    },
+    {
+      "id": "NFR4.1",
+      "description": "Game does not crash or throw unhandled exceptions",
+      "status": "OK",
+      "target": "src/",
+      "test_file": "tests/integration.test.ts"
+    },
+    {
+      "id": "NFR4.2",
+      "description": "Game recovers gracefully from edge cases",
+      "status": "OK",
+      "target": "src/",
+      "test_file": "tests/integration.test.ts"
+    },
+    {
+      "id": "NFR4.3",
+      "description": "No memory leaks during extended play sessions",
+      "status": "OK",
+      "target": "src/",
+      "test_file": "tests/integration.test.ts"
+    },
+    {
+      "id": "NFR5.1",
+      "description": "First-time player understands controls within 30 seconds",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "NFR5.2",
+      "description": "Controls responsive and feel natural",
+      "status": "OK",
+      "target": "src/Input.ts",
+      "test_file": "src/Input.test.ts"
+    },
+    {
+      "id": "NFR5.3",
+      "description": "Game difficulty consistent (no random spikes)",
+      "status": "OK",
+      "target": "src/GameLoop.ts",
+      "test_file": "src/GameLoop.test.ts"
+    },
+    {
+      "id": "NFR6.1",
+      "description": "Game renders at 1920×1080 resolution (landscape)",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "NFR6.2",
+      "description": "Graphics clear and readable",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "NFR6.3",
+      "description": "Ghosty and obstacles visually distinct from background",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    },
+    {
+      "id": "NFR6.4",
+      "description": "Score and high-score displays always visible",
+      "status": "OK",
+      "target": "src/Rendering.ts",
+      "test_file": "src/Rendering.test.ts"
+    }
+  ]
+}

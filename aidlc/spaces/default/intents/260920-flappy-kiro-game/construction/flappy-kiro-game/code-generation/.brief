@@ -1,0 +1,14 @@
+AIDLC-UNIT: flappy-kiro-game
+AIDLC-TESTING-CONTRACT: sha256:ebe9d56b9a57c4d5b2cd7d54130eec1f62d2968813a2d19af46eae186b3753c4
+
+## Testing Posture Brief
+
+- **Unit:** flappy-kiro-game
+- **Methodology:** test-after
+- **Test Strategy:** Standard (5-8 tests per component)
+- **Framework:** Vitest
+- **Scope:** Greenfield, no floor beyond strategy
+- **Test Command:** npm run test:u1
+- **Expected Coverage:** 60-80 tests across all components
+
+This brief is derived from the approved code-generation-plan.md.
